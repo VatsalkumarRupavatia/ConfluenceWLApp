@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<div th:replace="fragments/header :: header-css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.full-height {
+  height: 100%;
+
+}
+</style>
+<body>
+	<div th:replace="fragments/header :: header" />
+
+	<div class="container">
+
+		<div class="row full-height" style="margin-top: 20px">
+			<div
+				class="col-xs-12 col-sm-12 col-md-12">
+				<form th:action="@{/login}" method="post">
+					<fieldset>
+						<h4>Results:</h4>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12">
+								<h4 class="text-wrap" th:inline="text" >[[${tagDescription.tagName}]]</h4>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<a class="btn btn-primary " href="/tagDescription">Submit
+									another Tag</a>
+							</div>
+						</div>
+
+
+
+
+					</fieldset>
+				</form>
+			</div>
+		</div>
+
+	</div>
+<div class="container">
+	<div th:replace="fragments/footer :: footer" />
+</div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:replace="fragments/header :: header-css" />
+</head>
+<body>
+
+	<div th:replace="fragments/header :: header" />
+
+	<div class="container">
+
+
+		<div class="row" style="margin-top: 20px">
+			<div
+				class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+
+
+				<form action="#" th:action="@{/tagDescription}"
+					th:object="${tagDescription}" method="post">
+					<fieldset>
+						<div class="form-group">
+							<input type="text" name="tagName" id="tagName"
+								class="form-control input-lg" placeholder="Tag Name"
+								required="true" autofocus="true" th:field="*{tagName}" />
+						</div>
+						<div class="row">
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<input type="submit" class="btn btn-lg btn-primary btn-block"
+									value="Submit" />
+							</div>
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<input type="reset" class="btn btn-lg btn-primary btn-block"
+									value="Reset" />
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6"></div>
+						</div>
+
+					</fieldset>
+				</form>
+				<form action="#" th:action="@{/tagDescription}"
+					th:object="${tagDescription}" method="post">
+					<fieldset>
+						<div class="form-group">
+							<input type="text" name="tagName" id="tagName"
+								class="form-control input-lg" placeholder="Tag Name"
+								required="true" autofocus="true" th:field="*{tagName}" />
+						</div>
+						<div class="row">
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<input type="submit" class="btn btn-lg btn-primary btn-block"
+									value="Submit" />
+							</div>
+							<div class="col-xs-3 col-sm-3 col-md-3">
+								<input type="reset" class="btn btn-lg btn-primary btn-block"
+									value="Reset" />
+							</div>
+							<div class="col-xs-6 col-sm-6 col-md-6"></div>
+						</div>
+
+					</fieldset>
+				</form>
+				<form
+					action="https://auth.atlassian.com/authorize?audience=api.atlassian.com"
+					method="post">
+
+					<label>Enter Employee Id</label> <input type="text"
+						name="response_type" value="code" /> <input type="text"
+						name="client_id" value="COPi75ecOiVOzPjE8a0WO4ufWrSl5ybz" /> <input
+						type="text" name="prompt" value="consent" /> <input type="text"
+						name="redirect_uri" value="http://localhost:8080/home" /> <input
+						type="text" name="scope" value="read" /> <input type="SUBMIT"
+						value="Get Employee info" />
+					</form>
+			</div>
+		</div>
+
+	</div>
+	<!-- /.container -->
+	<div th:replace="fragments/footer :: footer" />
+
+</body>
+</html>

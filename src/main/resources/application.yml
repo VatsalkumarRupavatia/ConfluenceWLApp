@@ -1,0 +1,28 @@
+spring:
+  profiles:
+    active: dev
+
+security:
+  oauth2:
+    client:
+      prompt: 'consent'
+      clientId: COPi75ecOiVOzPjE8a0WO4ufWrSl5ybz
+      clientSecret: iYX3eocOUAnES3363r14wSCkX3109zn4Rsh2RmC1-2HP0d_b_z0u3jwK2QD4Hw1J
+      accessTokenUri: https://auth.atlassian.com/oauth/token
+      userAuthorizationUri: https://auth.atlassian.com/authorize?audience=api.atlassian.com&prompt=consent
+      scope: 'read:confluence-space.summary read:confluence-props manage:confluence-configuration'
+      grantType: 'authorization_code'
+      preEstablishedRedirectUri: http://localhost:8088/user
+      useCurrentUri: false
+
+app:
+  cloudId: 016764e7-c26b-49bc-9ff1-142fd0e30390
+  jiraUrl: https://api.atlassian.com/ex/confluence/016764e7-c26b-49bc-9ff1-142fd0e30390/wiki/rest/api/
+
+logging:
+  level:
+    org.springframework.security: info
+    org.springframework.security.oauth2: trace
+    org.springframework.web.client: trace
+server:
+  port: 8088
